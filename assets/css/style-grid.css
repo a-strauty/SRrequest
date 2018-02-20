@@ -1,0 +1,54 @@
+.the-grid {
+  display: grid;
+  width: 600px;
+  border: 1px solid #ededed;
+  margin: 0 auto;
+  grid-template-columns: 200px 200px 200px;
+}
+
+#nav_review{
+  background-color: red;
+}
+
+#nav_lookup{
+  background-color: blue;
+}
+
+#nav_login{
+  background-color: black;
+}
+
+body {
+    background: #282C34;
+    margin: 0;
+}
+
+.main-area {
+    margin: 2em;
+    padding: 1em;
+    border: 1px solid #41444B;
+}
+
+
+.masthead {
+    background: #21252B;
+    padding: 1.4em 1em .7em;
+    text-align: center;
+    border-bottom: 1px solid #18191B;
+}
+
+.site-title {
+    margin: 0;
+    padding: 0;
+    font-size: 1.8em;
+    font-weight: 200;
+    color: hsl(0, 0%, 95%);
+}
+
+.site-description {
+    margin-top: 0;
+    font-size: 70%;
+    text-transform: uppercase;
+    font-weight: 100;
+    color: hsl(0, 0%, 70%);
+}

@@ -1,8 +1,16 @@
 <html>
         <head>
                 <title><?php echo $title; ?></title>
+                <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/style-grid.css" />
         </head>
         <body>
 
+          <header class="masthead">
+              <div class="site-branding">
+                  <h1 class="site-title">Route Review</h1>
+                  <p class="site-description">Get to know the CSS Grid Layout Module</p>
+              </div><!-- .site-title -->
+          </header><!-- .masthead -->
 
-                <h1><?php echo $title; ?></h1>
+          <main class="main-area">
+            <section class="the-grid">

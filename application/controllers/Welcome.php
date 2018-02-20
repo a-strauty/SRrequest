@@ -26,7 +26,7 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$data['title'] = "Welcome";
+		$data['title'] = "Route Review - Home";
 
 		$this->load->view('templates/header', $data);
 		$this->load->view('home');
