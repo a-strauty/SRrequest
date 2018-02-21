@@ -2,6 +2,7 @@
         <head>
                 <title><?php echo $title; ?></title>
                 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/style-grid.css" />
+                <link href="http://fonts.googleapis.com/css?family=Dancing+Script:700|EB+Garamond" rel="stylesheet" type="text/css" />
         </head>
         <body>
 

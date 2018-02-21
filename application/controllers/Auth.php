@@ -124,9 +124,9 @@ class Auth extends CI_Controller {
 			);
 
 
-			$this->load->view('templates/header-login', $this->data);
+			$this->load->view('templates/header', $this->data);
 			$this->_render_page('auth/login', $this->data);
-			$this->load->view('templates/footer-login');
+			$this->load->view('templates/footer');
 		}
 	}
 
