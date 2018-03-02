@@ -8,8 +8,8 @@
 
           <header class="masthead">
               <div class="site-branding">
-                  <h1 class="site-title">Route Review</h1>
-                  <p class="site-description">Get to know the CSS Grid Layout Module</p>
+                  <h1 class="site-title">Abel Routing</h1>
+                  <p class="site-description">Making your map, step by step</p>
               </div><!-- .site-title -->
           </header><!-- .masthead -->
 
