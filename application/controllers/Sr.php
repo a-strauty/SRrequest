@@ -12,12 +12,14 @@ class Sr extends CI_Controller {
 
 	public function index()
 	{
+		$data['dayradio'] = $this->input->get('dayradio');
 		$data['names'] = $this->sr_model->get_names();
 		$data['days'] = $this->sr_model->get_days();
 		$data['title'] = 'Sales Routing';
 
 		$this->load->view('templates/header', $data);
-		$this->load->view('lookup/index', $data);
+		$this->load->view('lookup/lookupheader', $data);
+		$this->load->view('lookup/lookupfooter', $data);
 		$this->load->view('templates/footer');
 	}
 
@@ -32,7 +34,9 @@ class Sr extends CI_Controller {
 		$data['title'] = 'Sales Routing';
 
 		$this->load->view('templates/header', $data);
-		$this->load->view('lookup/results', $data);
+		$this->load->view('lookup/lookupheader', $data);
+		$this->load->view('lookup/lookupresults', $data);
+		$this->load->view('lookup/lookupfooter', $data);
 		$this->load->view('templates/footer');
 	}
 

@@ -1,5 +1,5 @@
 <div class="grid-title">
-	<h2>Stops by Day</h2>
+	<h3>Viewing your Stops by Day</h3>
 </div>
 
 	<form class="grid-form" id="srbyday"  method="get" action="sr/results">
