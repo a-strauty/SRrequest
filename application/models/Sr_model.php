@@ -9,11 +9,25 @@ class Sr_model extends CI_Model {
 
 	}
 
+	public function get_names_array()
+	{
+		$query = $this->db->query('SELECT sr_id, sr_name FROM sr_people');
+
+		return $query->result_array();
+	}
+
 	public function get_days()
 	{
 		$query = $this->db->query('SELECT value, day FROM list_weekday');
 
 		return $query->result();
+	}
+
+	public function get_days_array()
+	{
+		$query = $this->db->query('SELECT value, day FROM list_weekday');
+
+		return $query->result_array();
 	}
 
 	public function get_accounts($sr_select, $dayradio)

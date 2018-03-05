@@ -1,30 +1,30 @@
 <div class="grid-title">
 	<h3>Viewing your Stops by Day</h3>
 </div>
-	<form class="grid-form" id="srbyday"  method="get" action="sr/results">
+	<?php echo validation_errors(); ?>
+	<?php echo form_open('sr'); ?>
 
 		<div class="subgrid-formdropdown">
-	     <!-- create dropdown -->
 			<label class="description" for="element_1">Who are you?</label>
 				<span>
-					<select name="sr_select">
-						<?php
-						//use php function to create sales rep dropdown
-						foreach($names as $row)
-						{
-              if($sr_select == $row->sr_id) {
-                echo '<option selected="true" value="'.$row->sr_id.'">'.$row->sr_name.'</option>';
-              } else {
-                echo '<option value="'.$row->sr_id.'">'.$row->sr_name.'</option>';
-              }
-						}
-						?>
-					</select>
+					<!-- create dropdown -->
+					<?php
+					//create an array that the form_dropdown understands
+					$optionsDrowpdown = array();
+					foreach ($srnames as $optionDrowpdown)
+					{
+						$optionsDrowpdown[$optionDrowpdown['sr_id']] = $optionDrowpdown['sr_name'];
+					}
+					//create the dropdown using the new array from above
+					echo form_dropdown('sr_select', $optionsDrowpdown, '20');
+					?>
 				</span>
 		</div>
+
 		<div class="subgrid-formDaySelectDescription">
 			<label class="description" for="element_1">Select the day you would like to change</label>
 		</div>
+
 		<div class="subgrid-formDaySelect">
 			<span>
 					<?php
@@ -42,6 +42,7 @@
 					?>
 			</span>
 		</div>
+
     <div class="subgrid-formDaySelectSubmit">
         <input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
     </div>

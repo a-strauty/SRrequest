@@ -12,15 +12,38 @@ class Sr extends CI_Controller {
 
 	public function index()
 	{
-		$data['dayradio'] = $this->input->get('dayradio');
-		$data['names'] = $this->sr_model->get_names();
+		$data['sr_select'] = $this->input->post('sr_select');
+		$data['dayradio'] = $this->input->post('dayradio');
+		$data['accounts'] = $this->sr_model->get_accounts($data['sr_select'], $data['dayradio']);
+		$data['srnames'] = $this->sr_model->get_names_array();
 		$data['days'] = $this->sr_model->get_days();
+
 		$data['title'] = 'Sales Routing';
 
-		$this->load->view('templates/header', $data);
-		$this->load->view('lookup/lookupheader', $data);
-		$this->load->view('lookup/lookupfooter', $data);
-		$this->load->view('templates/footer');
+
+		$this->load->helper(array('form'));
+		$this->load->library('form_validation');
+
+		$this->form_validation->set_rules('sr_select', 'Name', 'required');
+		$this->form_validation->set_rules('dayradio', 'Day', 'required');
+
+		if ($this->form_validation->run() == FALSE)
+		{
+			$this->load->view('templates/header', $data);
+			$this->load->view('lookup/lookupheader', $data);
+			$this->load->view('lookup/lookupfooter');
+			$this->load->view('templates/footer');
+		}
+		else
+		{
+			$this->load->view('templates/header', $data);
+			$this->load->view('lookup/lookupheader', $data);
+			$this->load->view('lookup/lookupresults', $data);
+			$this->load->view('lookup/lookupfooter');
+			$this->load->view('templates/footer');
+		}
+
+
 	}
 
 	public function results()
