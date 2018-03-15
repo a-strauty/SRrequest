@@ -1,8 +1,10 @@
 <div class="grid-title">
 	<h3>Viewing your Stops by Day</h3>
 </div>
-	<?php echo validation_errors(); ?>
-	<?php echo form_open('sr'); ?>
+		<?php
+		echo validation_errors();
+		echo form_open('sr', 'class="grid-form"');
+		?>
 
 		<div class="subgrid-formdropdown">
 			<label class="description" for="element_1">Who are you?</label>
@@ -16,7 +18,7 @@
 						$optionsDrowpdown[$optionDrowpdown['sr_id']] = $optionDrowpdown['sr_name'];
 					}
 					//create the dropdown using the new array from above
-					echo form_dropdown('sr_select', $optionsDrowpdown, '20');
+					echo form_dropdown('sr_select', $optionsDrowpdown, set_value('sr_select'));
 					?>
 				</span>
 		</div>

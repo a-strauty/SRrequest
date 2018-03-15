@@ -3,8 +3,8 @@
   //create the table and new form for submitting requests
   unset($row);
   if ($accounts > 0) {
+    echo form_open('sr/request');
     echo "
-      <form id='form_request' class='form_table'  method='post' action='request'>
         <table id='table_id' class='display'>
           <thead>
             <tr>

@@ -2,7 +2,6 @@
 <div id="form container">
 
 <?php
-
   if($accounts>0)
   {
     echo "

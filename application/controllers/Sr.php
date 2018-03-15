@@ -23,6 +23,7 @@ class Sr extends CI_Controller {
 
 		$this->load->helper(array('form'));
 		$this->load->library('form_validation');
+		$this->load->library('session');
 
 		$this->form_validation->set_rules('sr_select', 'Name', 'required');
 		$this->form_validation->set_rules('dayradio', 'Day', 'required');
@@ -71,6 +72,10 @@ class Sr extends CI_Controller {
 		$data['accounts'] = $this->sr_model->get_request($data['day'], $data['req_change']);
 		$data['names'] = $this->sr_model->get_names();
 		$data['days'] = $this->sr_model->get_days();
+
+		$this->load->helper(array('form'));
+		$this->load->library('form_validation');
+		$this->load->library('session');
 
 		$data['title'] = 'Sales Routing';
 

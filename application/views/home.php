@@ -1,3 +1,7 @@
+<div class="grid-title">
+	<h3>Begin by Selecting one of the following:</h3>
+</div>
+
 <div class="grid-item">
    <?php echo anchor('sr', 'Create Requests<h2>Sales Rep</h2>Click Here', 'class="nav-button" id="nav-review"'); ?>
 </div>
