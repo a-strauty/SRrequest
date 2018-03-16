@@ -5,13 +5,19 @@
   if ($accounts > 0) {
     echo form_open('sr/request');
     echo "
-        <table id='table_id' class='display'>
+        <table id='tbl-lookupresults' class='display'>
+        <colgroup>
+          <col style='width:3%'>
+          <col style='width:3%'>
+          <col style='width:6%'>
+          <col style='width:50%'>
+          <col style='width:32%'>
+          <col style='width:6%'>
+        </colgroup>
           <thead>
             <tr>
-              <th>Change</th>
-              <th>SR</th>
-              <th>Day</th>
-              <th>Sequence</th>
+              <th></th>
+              <th></th>
               <th>Acct#</th>
               <th>DBA</th>
               <th>Address</th>
@@ -26,9 +32,7 @@
       echo "
             <tr>
               <td><input type='checkbox' name='req_change[]' value='".$row->sr_acct."'></td>
-              <td>".$row->sr_name."</td>
               <input type='hidden' name='req_sr' value='".$row->sr_name."' />
-              <td>".$row->sr_day."</td>
               <input type='hidden' name='og_day' value='".$row->sr_day."' />
               <td>".$row->sr_seq."</td>
               <td>".$row->sr_acct."</td>

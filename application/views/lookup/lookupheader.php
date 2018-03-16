@@ -34,11 +34,15 @@
 					foreach($days as $row)
 					{
             if($dayradio == $row->value) {
+							echo "<label class='radiocontainer' for=".$row->day.">";
               echo "<input id=".$row->day." name='dayradio' class='element radio' type='radio' value=".$row->value." checked/>";
-              echo "<label class='choice' for=".$row->day.">".$row->day."</label>";
+							echo "<span class='checkmark'></span>";
+              echo $row->day."</label>";
             } else {
+							echo "<label class='radiocontainer' for=".$row->day.">";
               echo "<input id=".$row->day." name='dayradio' class='element radio' type='radio' value=".$row->value." />";
-              echo "<label class='choice' for=".$row->day.">".$row->day."</label>";
+							echo "<span class='checkmark'></span>";
+              echo $row->day."</label>";
             }
 					}
 					?>
