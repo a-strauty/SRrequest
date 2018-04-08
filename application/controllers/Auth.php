@@ -26,8 +26,32 @@ class Auth extends CI_Controller {
 		}
 		elseif (!$this->ion_auth->is_admin()) // remove this elseif if you want to enable this for non-admins
 		{
-			// redirect them to the home page because they must be an administrator to view this
-			return show_error('You must be an administrator to view this page.');
+			if($this->ion_auth->in_group('ASM')) //check if ASM group
+			{
+				// Show the ASM Dashboard instead of Admin panel
+				$data['title'] = 'ASM Dashboard';
+
+				$this->load->view('templates/header', $data);
+				$this->_render_page('auth/dashboards/asm', $data);
+				$this->load->view('templates/footer');
+			}
+			else
+			{
+				if($this->ion_auth->in_group('Delivery'))
+				{
+					// Show the Deluvery Dashboard instead of Admin panel
+					$data['title'] = 'Delivery Dashboard';
+
+					$this->load->view('templates/header', $data);
+					$this->_render_page('auth/dashboards/delivery', $data);
+					$this->load->view('templates/footer');
+				}
+				else
+				{
+					//Not in ASM, Delivery, or Admin group
+					return show_error('You have not been assigned a group. Please contact the system administrator.');
+				}
+			}
 		}
 		else
 		{
@@ -55,7 +79,11 @@ class Auth extends CI_Controller {
 		elseif (!$this->ion_auth->is_admin()) // remove this elseif if you want to enable this for non-admins
 		{
 			// redirect them to the home page because they must be an administrator to view this
-			return show_error('You must be an administrator to view this page.');
+			$data['title'] = 'Admin Page';
+
+			$this->load->view('templates/header', $data);
+			$this->_render_page('auth/users', $this->data);
+			$this->load->view('templates/footer');
 		}
 		else
 		{
