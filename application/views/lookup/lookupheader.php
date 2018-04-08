@@ -28,25 +28,19 @@
 		</div>
 
 		<div class="subgrid-formDaySelect">
-			<span>
 					<?php
 					//use php to create the day bubble options
 					foreach($days as $row)
 					{
             if($dayradio == $row->value) {
-							echo "<label class='radiocontainer' for=".$row->day.">";
               echo "<input id=".$row->day." name='dayradio' class='element radio' type='radio' value=".$row->value." checked/>";
-							echo "<span class='checkmark'></span>";
-              echo $row->day."</label>";
+              echo "<label class='radiocontainer' for=".$row->day.">".$row->dayshorthand."</label>";
             } else {
-							echo "<label class='radiocontainer' for=".$row->day.">";
               echo "<input id=".$row->day." name='dayradio' class='element radio' type='radio' value=".$row->value." />";
-							echo "<span class='checkmark'></span>";
-              echo $row->day."</label>";
+              echo "<label class='radiocontainer' for=".$row->day.">".$row->dayshorthand."</label>";
             }
 					}
 					?>
-			</span>
 		</div>
 
     <div class="subgrid-formDaySelectSubmit">

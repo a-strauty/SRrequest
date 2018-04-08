@@ -4,7 +4,7 @@
 }
 
 .site-title {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Modern Antiqua', cursive;
     margin: 10px 0;
     padding: 0;
     font-size: 3em;
@@ -142,65 +142,27 @@ body {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #736754;
+  background-color: #2d433a;
   color: white;
 }
 
-.selected {
-    background-color: brown;
-    color: #FFF;
+.subgrid-formDaySelect input {
+  display: none !important;
 }
 
-.radiocontainer {
-    display: inline;
-    position: relative;
-    padding-left: 20px;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+.subgrid-formDaySelect input[type=radio] + label {
+  display: inline-block;
+  border-radius: 6px;
+  background: #c4ac7c;
+  height: 40px;
+  width: 40px;
+  margin-right: 3px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
 }
 
-.radiocontainer input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-}
-
-.checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
-    border-radius: 50%;
-}
-
-.radiocontainer:hover input ~ .checkmark {
-    background-color: #ccc;
-}
-
-.radiocontainer input:checked ~ .checkmark {
-    background-color: #2196F3;
-}
-
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-.radiocontainer input:checked ~ .checkmark:after {
-    display: block;
-}
-
-.radiocontainer .checkmark:after {
- 	top: 9px;
-	left: 9px;
-	width: 8px;
-	height: 8px;
-	border-radius: 50%;
-	background: white;
+.subgrid-formDaySelect input[type=radio]:checked + label {
+  background: #2d433a;
+  color: #ffffff;
 }

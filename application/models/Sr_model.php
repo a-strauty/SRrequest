@@ -18,7 +18,7 @@ class Sr_model extends CI_Model {
 
 	public function get_days()
 	{
-		$query = $this->db->query('SELECT value, day FROM list_weekday');
+		$query = $this->db->query('SELECT value, day, dayshorthand FROM list_weekday');
 
 		return $query->result();
 	}
